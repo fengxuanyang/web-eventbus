@@ -1,0 +1,247 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+.top-menu {
+    position: absolute;
+    width: 100%;
+    height: 15vw;
+    z-index: 2;
+}
+
+.pull-tab {
+    width: 100%;
+    height: 40px;
+    z-index: 99;
+    text-align: center;
+}
+
+.flex-row {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.flex-row-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 6px #fff;
+    border-right: 6px #f90;
+}
+
+.iframe-wrap {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    float: top;
+    z-index: 1;
+    background-color: gray;
+}
+
+.nav-page {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.retryMenu {
+    position: fixed;
+    bottom: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 16vw;
+}
+
+.divRetry {
+    right: 50%;
+    height: 16vw;
+    width: 44vw;
+    text-align: center;
+    background-position: 100% 100%;
+    background-image: url(../res/retry.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bottomLog {
+    display: none;
+}
+
+.mainPage {
+    height: 100%;
+    margin: 0px;
+    background-image: url(../res/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loadingToast {
+    display: none;
+}
+
+.centerMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*top: 43%;*/
+    width: 100%;
+    height: 80vw;
+    /*transform: translate(0, -50%);*/
+}
+
+.centerControl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../res/center_small.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 0%;
+    width: 100vw;
+    height: 100vw;
+}
+
+.centerControl-holder {
+    position: relative;
+    transform: rotate(45deg);
+    width: 70vw;
+    height: 70vw;
+}
+
+.bottomMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*top: 71%;*/
+    width: 100%;
+    height: 20vw;
+    /*position: absolute;*/
+    /*transform: translate(0%, -50%);*/
+}
+
+.sendMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*top: 86%;*/
+    width: 100%;
+    height: 20vw;
+    /*position: absolute;*/
+    /*transform: translate(0%, -50%);*/
+}
+
+.divLeft {
+    text-align: center;
+    height: 20vw;
+    width: auto;
+    position: absolute;
+    left: 25%;
+    transform: translate(-50%, 0%);
+}
+
+.divRight {
+    text-align: center;
+    height: 20vw;
+    position: absolute;
+    right: 25%;
+    transform: translate(50%, 0%);
+}
+
+.divCenter {
+    text-align: center;
+    height: 20vw;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0%);
+}
+
+.divSmallIcon {
+    height: 20vw;
+    width: 20vw;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 0%;
+}
+
+.divAdd {
+    background-image: url(../res/add.png);
+}
+
+.divMinus {
+    background-image: url(../res/minus.png);
+}
+
+.divMenu {
+    background-image: url(../res/menu.png);
+}
+
+.divHome {
+    background-image: url(../res/home.png);
+}
+
+.divBack {
+    background-image: url(../res/back.png);
+}
+
+.sendwrap {
+    width: 60vw;
+    display: flex;
+    height: 10vw;
+    background-image: url(../res/inputdisable.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*width: 64%;*/
+}
+
+.divInput {
+    height: 100%;
+    flex: 1;
+    padding-bottom: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: transparent;
+    border: 0px;
+}
+
+.divSend {
+    width: 18%;
+}
+
+.bottomLog {
+    top: 90%;
+    width: 100%;
+    position: absolute;
+}
+
+.centerControlBbtn {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+
+.centerControlOk {
+    text-align: center;
+    height: 25vw;
+    width: 25vw;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    left: 50%;
+    /*right: 50%;*/
+    transform: translate(-50%, -50%) rotate(-45deg);
+}

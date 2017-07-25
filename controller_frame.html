@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1'>
+    <link rel='stylesheet' href='css/weui-1.1.1/weui.min.css'>
+    <link rel='stylesheet' href='css/common.css'>
+    <title>遥控器</title>
+</head>
+
+<body>
+<!--     <div class="js_dialog" id="id_dialog_exit" style="display: none;">
+    <div class="weui-mask"></div>
+    <div class="weui-dialog weui-skin_android">
+        <div class="weui-dialog__bd">
+            退出遥控器
+        </div>
+        <div class="weui-dialog__ft">
+            <div class="weui-dialog__btn weui-dialog__btn_default" id='id_dialog_exit_cancel'>取消</div>
+            <div class="weui-dialog__btn weui-dialog__btn_primary" id='id_dialog_exit_sure'>确定</div>
+        </div>
+    </div>
+</div> -->
+<div class="mainPage" id="main_page">
+    <div class='loadingToast' id='id_controller_loading'>
+        <div class='weui-mask_transparent'></div>
+        <div class='weui-toast'>
+            <i class='weui-loading weui-icon_toast'></i>
+            <p class='weui-toast_content'>连接中</p>
+        </div>
+    </div>
+    <div class='controlPage'>
+        <!-- <img src='res/bg.jpg' style='width:100%;height:100%;' /> -->
+        <div class='topMenu'>
+            <div class='divLeft' id='control_add'>
+                <div class='divSmallIcon divAdd'></div>
+            </div>
+            <div class='divRight' id='control_minus'>
+                <div class='divSmallIcon divMinus'></div>
+            </div>
+        </div>
+        <div class='centerMenu'>
+            <div class='centerControl'>
+                <div class='centerControl-holder'>
+                    <div class='centerControlBbtn' id='center_control_top'>
+                    </div>
+                    <div class='centerControlBbtn' id='center_control_right' style='right:0'>
+                    </div>
+                    <div class='centerControlBbtn' id='center_control_bottom' style='right:0;bottom:0'>
+                    </div>
+                    <div class='centerControlBbtn' id='center_control_left' style='bottom:0'>
+                    </div>
+                    <div class='centerControlOk' id='center_control_ok'>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='sendMenu'>
+            <div class='sendwrap' style="pointer-events: none;">
+                <input class='divInput weui-input' id='control_input'>
+                <span class='divSend' id='control_send'></span>
+            </div>
+        </div>
+        <div class='bottomMenu'>
+            <div class='divCenter' id='control_home'>
+                <div class='divSmallIcon divHome'></div>
+            </div>
+            <div class='divLeft' id='control_menu'>
+                <div class='divSmallIcon divMenu'></div>
+            </div>
+            <div class='divRight' id='control_back'>
+                <div class='divSmallIcon divBack'></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var bodyHeight = document.body.clientHeight
+    var inputBtn = document.getElementById('control_input');
+    var main = document.getElementById('main_page');
+    inputBtn.addEventListener("focus", function () {
+        main.style.top = 0 + "px";
+        main.style.height = bodyHeight + "px";
+    });
+    inputBtn.addEventListener("blur", function () {
+        main.style.top = 0 + "px";
+        main.style.height = bodyHeight + "px";
+    });
+</script>
+</body>
+
+</html>

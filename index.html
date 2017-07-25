@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1'>
+    <link rel='stylesheet' href='css/weui-1.1.1/weui.min.css'>
+    <link rel='stylesheet' href='css/common.css'>
+    <title>投影仪</title>
+</head>
+
+<body>
+<div id='loading_toast' style="display: none;">
+    <div class='weui-mask_transparent'></div>
+    <div class='weui-toast'>
+        <i class='weui-loading weui-icon_toast'></i>
+        <p class='weui-toast_content'>连接中</p>
+    </div>
+</div>
+<div id="id_top_menu" style="position: fixed;top: 0px;width: 100%">
+    <div class="weui-navbar">
+        <div class="weui-navbar__item weui-bar__item_on" id="menu_controller">
+            遥控器
+        </div>
+        <div class="weui-navbar__item" id="menu_wireless_store">
+            无线存储
+        </div>
+        <div class="weui-navbar__item" id="menu_async_display">
+            同屏
+        </div>
+    </div>
+    <div class="weui-tab__panel"></div>
+    <div class="pull-tab" style="height: 30px">
+        <img src="res/pull_down.png" id="top_pull_tab" style="height: 100%">
+    </div>
+</div>
+
+<div class="nav-page" id="nav_page_bt"
+     style='width: 100%;height: 100%; background-image: url(res/bt.jpg);background-repeat: no-repeat;background-size: cover;'>
+    <label class='weui_label' id='bt_state'></label>
+    <div class='retryMenu'>
+        <div class='divRetry' id='bt_retry_connect'></div>
+    </div>
+</div>
+<div class="nav-page" id="nav_page_wifi"
+     style='width: 100%;height: 100%; background-image: url(res/wifi.jpg);background-repeat: no-repeat;background-size: cover;display: none;'>
+    <label class='weui_label' id='wifi_state' style='display: none;'></label>
+    <div class='retryMenu'>
+        <div class='divRetry' id='wifi_retry_connect'></div>
+    </div>
+</div>
+
+<input > </input>
+<div class="nav-page" id="nav_page_wifisetting"
+     style='width: 100%;height: 100%;background-repeat: no-repeat;background-size: cover;display: none'>
+    <div class="weui-flex top-bar" onclick="onWifiSettingClick()">
+        <div class="weui-flex__item">
+            <i class="weui-icon-warn"></i>
+            <span class="top-bar-title">手机网络设置方法</span>
+        </div>
+        <div class="wizard-spec-icon-div">
+            <img class="wizard-spec-icon" src="res/more.png">
+        </div>
+    </div>
+    <div class="wizard-bold-line"></div>
+    <div class="wizard">
+        <div class="weui-flex">
+            <div class="weui-flex__item">
+                <p class="summary-text">投影仪网络设置</p>
+            </div>
+            <div class="wifi-scan-btn btn-with-active" onclick="onWifiRefreshClick()">
+                <span>搜索网络</span>
+                <img style="width: 18px; height: 18px" src="res/more.png">
+            </div>
+        </div>
+        <div class="wizard-thin-line"></div>
+        <div id="id_WifiList">
+            <div class="wifi-list" id="id_WifiItems"></div>
+            <div id="id_RetryDiv">
+                <div class="wizard-bold-line"></div>
+                <div class="weui-flex">
+                    <div class="weui-flex__item"></div>
+                    <div class="weui-flex__item" onclick="onNextStepClick()">
+                        <div class="wifi-retry-btn btn-with-active">
+                            <img class="wizard-spec-icon" src="res/refresh.png">
+                            <p>重试</p>
+                        </div>
+                    </div>
+                    <div class="weui-flex__item"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='iframe-wrap' id='id_iframe_wrap'></div>
+<script type='text/javascript' src='js/soundjs/soundjs-NEXT.min.js'></script>
+<script src='js/jquery/jquery.js'></script>
+<script type='text/javascript ' src='js/weixin/jweixin-1.2.0.js'></script>
+<script src='js/commenconstant.js'></script>
+<!-- <script src='js/protobufcompilted.js'></script> -->
+<script src='js/protobufcompilted0622.js'></script>
+<script src='js/netrequest.js'></script>
+<script src='js/utils.js'></script>
+<script src='js/datatransmission.js'></script>
+<script src='js/xback.js'></script>
+<script src='js/eventBus.js'></script>
+<script src='js/framefilemanager.js'></script>
+<script src='js/controller.js'></script>
+<script src='js/wechatjsapi.js '></script>
+<script src="js/wifi_wizard.js"></script>
+<script src="js/bt_wizard.js"></script>
+<script src="js/airplay_wizard.js"></script>
+<script src='js/index.js'></script>
+<script type="text/javascript">
+    $(function () {
+        $('.weui-navbar__item').on('click', function () {
+            $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+        });
+    });
+</script>
+</body>
+
+</html>

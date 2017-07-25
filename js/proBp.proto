@@ -1,0 +1,74 @@
+package airsync;
+
+option java_package = "com.ragentek.airsync.protobuf";
+option java_outer_classname = "ProBp";
+
+// 数据组织格式：CmdId(2 bytes) + data(详细见CmdId中的定义)
+enum CmdId{
+	NONE = 0;
+	
+	// REQ: 微信网页 -> 投影仪
+	REQ_KEY_INPUT = 101;	// data is KeyInputRequest.class
+	REQ_TEXT_INPUT = 102;	// data is TextInputRequest.class
+	REQ_FILE_MANAGER = 103; // data is BaseRequest.class
+	
+    // RESP: 投影仪 -> 微信网页
+	RESP_KEY_INPUT = 201; 	// data is BaseResponse.class
+	RESP_TEXT_INPUT = 202;	// data is BaseResponse.class
+	RESP_FILE_MANAGER = 203; 	// data is FileManagerResponse.class
+	
+	// PUSH: 投影仪 -> 微信网页
+	PUSH_EDIT_FOCUS_CHANGE = 301;	// data is EditFocusChangePush.class
+}
+
+message BaseRequest {
+}
+
+message BaseResponse {
+	required int32 ErrCode = 1;
+	optional string ErrMsg = 2;
+}
+
+message BasePush {
+}
+
+enum KeyCode {
+	POWER = 1;
+	HOME = 2;
+	MENU = 3;
+	BACK = 4;
+	OK = 5;
+	VOLUME_UP = 6;
+	VOLUME_DOME = 7;
+	UPWARD = 8;
+	DOWNWARD = 9; 
+	TOLEFT = 10;
+	TORIGHT = 11;
+}
+
+message KeyInputRequest {
+	required BaseRequest BaseRequest = 1;
+	required KeyCode code = 2; //按键对应的枚举值
+}
+
+message TextInputRequest {
+	required BaseRequest BaseRequest = 1;
+	required string text = 2; // 文本字符串
+}
+
+message FileManagerResponse {
+	required BaseResponse BaseResponse = 1;  
+	optional string url = 2; // 文件管理网址，如果投影仪没有开启该功能，该字段为空
+}
+
+enum FocusSate {
+	TRUE = 1;
+	FALSE = 2;
+}
+
+message EditFocusChangePush {
+	required BasePush BasePush = 1;
+	required FocusSate focus = 2;	// 是否处于焦点状态
+	optional string text = 3; // 如果处于焦点状态，会将编辑框的文本返回，可能为空
+}
+
