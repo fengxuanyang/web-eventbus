@@ -1,4 +1,4 @@
-###eventbus 实现event 广播
+####eventbus 实现event 广播g
 在js中，经常使用这样的方式进行event广播
 function triggerEvent(state) {
     var event = $.Event(state);
