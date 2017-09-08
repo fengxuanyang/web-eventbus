@@ -1,9 +1,11 @@
 ###eventbus实现event 广播
+
 在js中，经常使用这样的方式进行event广播
 function triggerEvent(state) {
     var event = $.Event(state);
     $(document).trigger(event);
 }
+
 
 $(document).on(EVENT_WIFI_DISCONNECTED, function () {
         netStatus &= (~WIFI_STATUS_OK);
@@ -16,6 +18,7 @@ $(document).on(EVENT_WIFI_DISCONNECTED, function () {
 });
 
 但是实际使用中发现
+
 ###遇到问题：
 在输入法显示的情况下， $(document).trigger(event);发送广播...会发现一个奇怪的现象：输入法界面隐藏了
 ###类似情况：
